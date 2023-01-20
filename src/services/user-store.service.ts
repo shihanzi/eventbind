@@ -5,6 +5,9 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class UserStoreService {
+  getfullNameForStore(unique_name: any) {
+    throw new Error('Method not implemented.');
+  }
 
   private fullName$ = new BehaviorSubject<string>('');
   private role$ = new BehaviorSubject<string>('');

@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { Router, RouterModule } from '@angular/router';
 import { validateForm } from 'src/helpers/validatefom';
 import { AuthService } from 'src/services/auth.service';
+import { UserStoreService } from 'src/services/user-store.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,7 +16,9 @@ export class SignInComponent implements OnInit {
   isText: boolean = false;
   loginForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) { }
+  constructor(private fb: FormBuilder, private auth: AuthService, private router: Router,
+    private userStore:UserStoreService
+    ) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group({
@@ -36,6 +39,9 @@ export class SignInComponent implements OnInit {
           console.log(res.message)
       this.loginForm.reset();
       this.auth.storeToken(res.token);
+      const tokenPayload = this.auth.decodeToken();
+      this.userStore.setfullNameForStore(tokenPayload.unique_name);
+      this.userStore.setRoleForStore(tokenPayload.role);
       this.router.navigate(['dashboard'])
     }, 
      error: (err) => {
@@ -48,4 +54,3 @@ export class SignInComponent implements OnInit {
     }
   }
 }
-
