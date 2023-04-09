@@ -17,14 +17,16 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.api.getUsers().subscribe(res=>{this.users =res;});
-
     this.userStore.getfullNameFromStore().subscribe
     (val=>{
         let fullNameFromToken = this.auth.getfullNameFromToken();
         this.fullName = val || fullNameFromToken
       })}
-
+      sideBarOpen = true;
   logOut(){
     this.auth.signOut();
+  }
+  sideBarToggler() {
+    this.sideBarOpen = !this.sideBarOpen;
   }
 }

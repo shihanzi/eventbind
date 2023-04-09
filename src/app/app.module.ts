@@ -14,6 +14,12 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { NavBarComponent } from '../components/nav-bar/nav-bar.component';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatListModule} from '@angular/material/list';
+import { HomeComponent } from 'src/components/home/home.component';
+import { SideNavComponent } from 'src/components/side-nav/side-nav.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
@@ -22,6 +28,8 @@ import {MatListModule} from '@angular/material/list';
     SignUpComponent,
     DashboardComponent,
     NavBarComponent,
+    HomeComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,11 @@ import {MatListModule} from '@angular/material/list';
     LayoutModule,
     FormsModule,
     MatSliderModule,
-    MatListModule
+    MatListModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule,
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,
