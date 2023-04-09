@@ -34,6 +34,7 @@ export class SignInComponent implements OnInit {
   onLogin() {
     if (this.loginForm.valid) {
       console.log(this.loginForm.value);
+      //send obj to db
       this.auth.signIn(this.loginForm.value).subscribe({
         next: (res) => {
           console.log(res.message)

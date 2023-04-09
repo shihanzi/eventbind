@@ -1,9 +1,9 @@
 <mat-nav-list>
     <div class="logo py-4">
-      <img src="./assets/logo.svg" alt="Company Logo" />
+      <img src="./assets/images/company-logo.png" alt="Company Logo" />
     </div>
     <mat-divider></mat-divider>
-    <h2 matSubheader class="mt-2">APPLICATIONS</h2>
+    <h2 matSubheader class="mt-2">MENU</h2>
   
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
       <mat-icon>home</mat-icon> Home
@@ -14,8 +14,8 @@
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/UserManagement">
       <mat-icon>supervised_user_circle</mat-icon> UserManagement
     </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 3 </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 4 </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 5 </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 6 </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/rep"> <mat-icon>business_center</mat-icon> Reps </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/customers"> <mat-icon>people_outline</mat-icon> Customers </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/location"> <mat-icon>location_city</mat-icon> Locations </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/lot"> <mat-icon>domain</mat-icon> Lots </a>
   </mat-nav-list>

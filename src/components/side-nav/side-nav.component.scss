@@ -1,3 +1,6 @@
+body{
+  background-color: #0f3606 !important; 
+}
 :host {
     .mat-icon {
       vertical-align: middle;
@@ -8,7 +11,7 @@
     text-align: center;
     padding: 2.6rem 1rem;
     img {
-      width: 200px;
+      width: 150px;
     }
   }
   .mat-divider {
@@ -16,19 +19,19 @@
     border-color: white;
   }
   .mat-list-item {
-    color: #94a3b8 !important;
+    color: #183502 !important;
     font-size: 0.8rem;
     height: 44px !important;
     margin-bottom: 4px;
     &:hover {
-      color: #f2f5f7 !important;
+      color: #014e01 !important;
     }
     ::ng-deep {
       .mat-list-item-content {
         border-radius: 5px;
         margin: 0 8px;
         &:hover {
-          background: #30384b !important;
+          background: #20df1a !important;
         }
       }
     }
@@ -40,12 +43,12 @@
     //   background: blue;
     // }
   
-    color: black !important;
+    color: rgb(30, 78, 5) !important;
     ::ng-deep {
       .mat-list-item-content {
-        background: #6c6d6a !important;
+        background: #f3f7eb !important;
         &:hover {
-          background: #6c6d6a !important;
+          background: #f0f5e6 !important;
         }
       }
     }

@@ -23,6 +23,10 @@ export class AuthService {
   signIn(loginObj:any){
     return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj);
   }
+  //this LocObj define from APILocationController
+  addLocation(locObj:any){
+    return this.http.post<any>(`${this.baseUrl}RegisterLocation`,locObj);
+  }
   signOut(){
     localStorage.clear();
     this.router.navigate(['signin']);

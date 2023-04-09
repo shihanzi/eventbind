@@ -1,0 +1,29 @@
+<h3>Add Location</h3>
+<br>
+<div>
+  <form [formGroup]="locationaddForm">
+<div>
+  <label for="text">Location Name</label><input class="form-control" formControlName="locationname" type="text" placeholder="Location Name"
+  aria-label="default input example">
+  <small *ngIf="locationaddForm.controls['locationname'].dirty && locationaddForm.hasError('required','locationname')"class="text-danger">Location Name Required</small>
+</div>
+   <div>
+    <label for="nickname">Nick Name</label><input class="form-control" formControlName="nickname" type="text" placeholder="Nick Name"
+    aria-label="default input example">
+    <small *ngIf="locationaddForm.controls['nickname'].dirty && locationaddForm.hasError('required','nickname')"class="text-danger">Nick Name Required</small>
+   </div>
+      <div class="input-group mb-3">
+      <div>
+        <label for="perches">Perches</label>
+        <input formControlName="perches" class="form-control" aria-label="Perch (to the nearest Round)">
+        <label for="perches">Value</label>
+        <span class="input-group-text">Rs</span>
+        <input input formControlName="amount" class="form-control" aria-label="Amount (to the nearest Rupees)">
+      </div>
+    </div>
+  </form>
+  <div class="buttonz">
+    <button type="button" class="btn btn-success mr-1">Save</button>
+    <button type="button" class="btn btn-danger">Cancel</button>
+  </div>
+</div>

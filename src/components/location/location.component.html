@@ -1,12 +1,15 @@
 <mat-drawer-container>
   <mat-drawer mode="side" [opened]="sideBarOpen">
-    <!-- <mat-drawer mode="side" opened="true"> -->
     <app-side-nav></app-side-nav>
   </mat-drawer>
   <mat-drawer-content>
     <app-nav-bar (toggleSidebarForMe)="sideBarToggler()"></app-nav-bar>
     <router-outlet>
-      <h1>hello</h1>
+      <h1>Location</h1>
+      <div class="button">
+        <button mat-raised-button color="warn" (click)="openDialog()">Add Location</button>
+      </div>
     </router-outlet>
+    
   </mat-drawer-content>
 </mat-drawer-container>

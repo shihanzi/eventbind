@@ -34,6 +34,7 @@ export class SignUpComponent implements OnInit {
   }
   onSignUp() {
     if (this.signupForm.valid) {
+      //send obj to db
       this.auth.signUp(this.signupForm.value)
         .subscribe({
           next: (res => {
