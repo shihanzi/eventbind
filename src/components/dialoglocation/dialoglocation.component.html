@@ -15,15 +15,15 @@
       <div class="input-group mb-3">
       <div>
         <label for="perches">Perches</label>
-        <input formControlName="perches" class="form-control" aria-label="Perch (to the nearest Round)">
+        <input type="number" step="0.01" formControlName="perches" class="form-control" aria-label="Perch (to the nearest Round)">
         <label for="perches">Value</label>
         <span class="input-group-text">Rs</span>
-        <input input formControlName="amount" class="form-control" aria-label="Amount (to the nearest Rupees)">
+        <input type="number" step="0.01" formControlName="amount" class="form-control" aria-label="Amount (to the nearest Rupees)">
       </div>
     </div>
   </form>
   <div class="buttonz">
-    <button type="button" class="btn btn-success mr-1">Save</button>
-    <button type="button" class="btn btn-danger">Cancel</button>
+    <button (click)="onSave()" type="button" class="btn btn-success mr-1">Save</button>
+    <button type="button" class="btn btn-danger" (click)="close()">Cancel</button>
   </div>
 </div>

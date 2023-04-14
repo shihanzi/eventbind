@@ -4,13 +4,14 @@ import { Token } from '@angular/compiler';
 import { TokenType } from '@angular/compiler/public_api';
 import { Router } from '@angular/router';
 import {JwtHelperService} from '@auth0/angular-jwt'
+import { catchError, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  private baseUrl : string ="https://localhost:44337/api/User/";
+  private baseUrl : string ="https://localhost:44337/api/";
   private userPayLoad :any;
   
   constructor(private http: HttpClient, private router: Router) { 
@@ -18,14 +19,23 @@ export class AuthService {
   }
   
   signUp(userObj:any){
-    return this.http.post<any>(`${this.baseUrl}registeruser`,userObj);
+    return this.http.post<any>(`${this.baseUrl}User/registeruser`,userObj);
   }
   signIn(loginObj:any){
-    return this.http.post<any>(`${this.baseUrl}authenticate`,loginObj);
+    return this.http.post<any>(`${this.baseUrl}User/authenticate`,loginObj);
   }
   //this LocObj define from APILocationController
   addLocation(locObj:any){
-    return this.http.post<any>(`${this.baseUrl}RegisterLocation`,locObj);
+    return this.http.post<any>(`${this.baseUrl}Location/RegisterLocation`,locObj);
+  //   console.log('addLocation called with locObj:', locObj);
+  // return this.http.post<any>(`${this.baseUrl}RegisterLocation`, locObj)
+  //   .pipe(
+  //     tap(res => console.log('addLocation response:', res)),
+  //     catchError(error => {
+  //       console.error('addLocation error:', error);
+  //       return throwError(error);
+  //     })
+  //   );
   }
   signOut(){
     localStorage.clear();

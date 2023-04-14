@@ -7,7 +7,7 @@ import { SignInComponent } from 'src/components/sign-in/sign-in.component';
 import { SignUpComponent } from 'src/components/sign-up/sign-up.component';
 import { TokenInterceptor } from 'src/interceptors/token.interceptor';
 import {MatButtonModule} from '@angular/material/button';
-import {MatDialog, MatDialogModule, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import {MatDialog, MatDialogModule, MAT_DIALOG_DATA,MatDialogRef} from '@angular/material/dialog';
 import {MatSelectModule} from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -68,7 +68,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatDialogModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
   ],
   providers: [{
     provide:HTTP_INTERCEPTORS,
