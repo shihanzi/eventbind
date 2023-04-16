@@ -3,9 +3,9 @@
 <div>
   <form [formGroup]="locationaddForm">
 <div>
-  <label for="text">Location Name</label><input class="form-control" formControlName="locationname" type="text" placeholder="Location Name"
+  <label for="text">Location Name</label><input class="form-control" formControlName="name" type="text" placeholder="Location Name"
   aria-label="default input example">
-  <small *ngIf="locationaddForm.controls['locationname'].dirty && locationaddForm.hasError('required','locationname')"class="text-danger">Location Name Required</small>
+  <small *ngIf="locationaddForm.controls['name'].dirty && locationaddForm.hasError('required','name')"class="text-danger">Location Name Required</small>
 </div>
    <div>
     <label for="nickname">Nick Name</label><input class="form-control" formControlName="nickname" type="text" placeholder="Nick Name"
@@ -18,7 +18,7 @@
         <input type="number" step="0.01" formControlName="perches" class="form-control" aria-label="Perch (to the nearest Round)">
         <label for="perches">Value</label>
         <span class="input-group-text">Rs</span>
-        <input type="number" step="0.01" formControlName="amount" class="form-control" aria-label="Amount (to the nearest Rupees)">
+        <input type="number" step="0.01" formControlName="value" class="form-control" aria-label="Amount (to the nearest Rupees)">
       </div>
     </div>
   </form>

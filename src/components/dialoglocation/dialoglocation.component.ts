@@ -23,10 +23,10 @@ export class DialoglocationComponent implements OnInit {
 
   ngOnInit(): void {
     this.locationaddForm = this.fb.group({
-      locationname: ['', Validators.required],
+      name: ['', Validators.required],
       nickname: ['', Validators.required],
       perches: ['', Validators.required],
-      amount: ['', Validators.required],
+      value: ['', Validators.required],
     })
   }
   onSave() {
@@ -37,10 +37,11 @@ export class DialoglocationComponent implements OnInit {
           alert(res.message);
           console.log(res); // log the response object
           this.locationaddForm.reset();
-          this.router.navigate(['signin']);
+          this.close();
+          this.router.navigate(['location']);
         }),
         error: (err => {
-          console.log(err); // log the response object
+         // console.log(err); // log the response object
           alert(err?.error.message)
         })
       })
