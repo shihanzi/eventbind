@@ -37,6 +37,9 @@ export class AuthService {
   //     })
   //   );
   }
+  getLocations(locObj:any){
+    return this.http.get<any>(`${this.baseUrl}Location`,locObj);
+  }
   signOut(){
     localStorage.clear();
     this.router.navigate(['signin']);

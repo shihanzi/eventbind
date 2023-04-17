@@ -14,6 +14,8 @@ export class LocationComponent implements OnInit {
   constructor(private auth:AuthService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
+    const locObj: any = {}; // initialize locObj
+    this.getAllLocations(locObj);
   }
   sideBarOpen = true;
   logOut(){
@@ -28,5 +30,12 @@ export class LocationComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+  getAllLocations(locObj:any){
+    this.auth.getLocations(locObj).subscribe({
+      next:(res)=>{
+        console.log(res);
+      }
+    })
   }
 }
